@@ -23,7 +23,7 @@ app.use('/api/blogs', blogRoutes)
 app.use('/api/contact', contactRoutes)
 
 app.get('/', (_req, res) => {
-  res.json({ message: '🟢 Askrap Collection Dubai API is running.' })
+  res.json({ message: '🟢 Askrap Collection API is running.' })
 })
 
 app.use((_req, res) => {
