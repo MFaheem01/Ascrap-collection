@@ -8,6 +8,7 @@ import authRoutes from './routes/auth.routes.js'
 import serviceRoutes from './routes/service.routes.js'
 import blogRoutes from './routes/blog.routes.js'
 import contactRoutes from './routes/contact.routes.js'
+import connectDB from './config/db.js'
 
 const app = express()
 
@@ -15,6 +16,16 @@ const app = express()
 app.use(cors({ origin: true, credentials: true }))
 app.use(express.json())
 app.use(morgan('dev'))
+
+// Ensure database connection before routing requests (crucial for serverless environments)
+app.use(async (req, res, next) => {
+  try {
+    await connectDB()
+    next()
+  } catch (error) {
+    next(error)
+  }
+})
 
 //API Routes  
 app.use('/api/auth', authRoutes)
