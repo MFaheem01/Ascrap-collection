@@ -49,10 +49,7 @@ export function ContactForm() {
         service: service ?? undefined,
         message: message || undefined,
       })
-
-      toast.success("Request received!", {
-        description: "Your pickup request has been received. We will get back to you as soon as possible.",
-      })
+      toast.success("Your pickup request has been received. We will get back to you as soon as possible.")
       form.reset()
       setService(null)
     } catch (error) {

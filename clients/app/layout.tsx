@@ -18,9 +18,9 @@ const caveat = Caveat({
 })
 
 export const metadata: Metadata = {
-  title: 'ScrapWorks — Scrap Metal Collection & Recycling',
+  title: 'Al Adnan — scrap buyer in UAE',
   description:
-    'ScrapWorks provides fast, reliable scrap metal pickup, e-waste collection, appliance removal, and industrial recycling for homes and businesses.',
+    'Al Adnan provides scrap metal pickup, e-waste collection, appliance removal, and industrial recycling in UAE',
 }
 
 export const viewport: Viewport = {
