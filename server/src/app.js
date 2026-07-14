@@ -8,6 +8,7 @@ import authRoutes from './routes/auth.routes.js'
 import serviceRoutes from './routes/service.routes.js'
 import blogRoutes from './routes/blog.routes.js'
 import contactRoutes from './routes/contact.routes.js'
+import inquiryRoutes from './routes/inquiry.routes.js'
 import connectDB from './config/db.js'
 
 const app = express()
@@ -32,6 +33,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/services', serviceRoutes)
 app.use('/api/blogs', blogRoutes)
 app.use('/api/contact', contactRoutes)
+app.use('/api/inquiries', inquiryRoutes)
 
 app.get('/', (_req, res) => {
   res.json({ message: '🟢 Askrap Collection API is running.' })

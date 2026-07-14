@@ -13,7 +13,7 @@ export const site = {
   phone: '+1 (246) 333-0089',
   email: 'pickup@scrapworks.com',
   address: '88 Brooklyn Golden Street, New York, USA',
-  hours: 'Mon – Sat: 8:00am to 6:00pm',
+  hours: '24/7',
 }
 
 export const navLinks = [

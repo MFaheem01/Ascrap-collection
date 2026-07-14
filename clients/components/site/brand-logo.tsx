@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import { Recycle } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { site } from '@/lib/site-data'
-
+import brand from '@/public/images/al adnan.png'
+import Image from 'next/image'
 export function BrandLogo({
   className,
   onDark = false,
@@ -12,17 +11,7 @@ export function BrandLogo({
 }) {
   return (
     <Link href="/" className={cn('flex items-center gap-2.5', className)}>
-      <span className="flex size-10 items-center justify-center rounded-md bg-gold text-gold-foreground">
-        <Recycle className="size-6" />
-      </span>
-      <span
-        className={cn(
-          'text-xl font-extrabold uppercase tracking-tight',
-          onDark ? 'text-brand-green-foreground' : 'text-foreground',
-        )}
-      >
-        {site.name}
-      </span>
+      <Image src={brand} alt="Logo" width={100} height={100} />
     </Link>
   )
 }

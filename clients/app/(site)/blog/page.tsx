@@ -1,11 +1,6 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import { CalendarDays, ArrowRight } from 'lucide-react'
 import { PageBanner } from '@/components/site/page-banner'
 import { SectionHeading } from '@/components/site/section-heading'
-import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardFooter } from '@/components/ui/card'
 
 export const metadata: Metadata = {
   title: 'Blog — ScrapWorks',

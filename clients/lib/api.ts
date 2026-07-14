@@ -1,13 +1,13 @@
-// API client with JWT support
+// API client
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL
 
-// Read the stored JWT token (only works in browser context)
+// Read the stored JWT token
 function getToken(): string | null {
   if (typeof window === 'undefined') return null
   return localStorage.getItem('askrap_token')
 }
 
-// Build request headers — attaches Bearer token if one exists
+// Build request headers
 function headers(extra?: HeadersInit): HeadersInit {
   const token = getToken()
   return {
@@ -17,7 +17,7 @@ function headers(extra?: HeadersInit): HeadersInit {
   }
 }
 
-// Generic fetch wrapper — throws on non-OK HTTP responses
+// Generic fetch wrapper
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, {
     headers: headers(),
@@ -30,7 +30,7 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
   return data as T
 }
 
-// ─── Auth ─────────────────────────────────────────────────────
+//  Auth 
 
 export const authApi = {
   login: (email: string, password: string) =>
@@ -52,7 +52,7 @@ export const authApi = {
     }),
 }
 
-// ─── Services ─────────────────────────────────────────────────
+// Services 
 
 export type ApiService = {
   _id: string
@@ -87,7 +87,7 @@ export const servicesApi = {
     request<{ success: boolean; message: string }>(`/api/services/${id}`, { method: 'DELETE' }),
 }
 
-// ─── Blogs ────────────────────────────────────────────────────
+// Blogs 
 
 export type ApiBlog = {
   _id: string
@@ -125,7 +125,7 @@ export const blogsApi = {
     request<{ success: boolean; message: string }>(`/api/blogs/${id}`, { method: 'DELETE' }),
 }
 
-// ─── Contact ──────────────────────────────────────────────────
+//  Contact 
 
 export type ContactType = 'email' | 'phone' | 'location'
 
@@ -164,3 +164,50 @@ export const contactApi = {
   delete: (id: string) =>
     request<{ success: boolean; message: string }>(`/api/contact/${id}`, { method: 'DELETE' }),
 }
+
+// Inquiries (Contact Form Submissions) ─────────────────────────────────────────
+
+export type InquiryStatus = 'new' | 'contacted' | 'resolved'
+
+export type ApiInquiry = {
+  _id: string
+  name: string
+  phone: string
+  email: string
+  service: string
+  message: string
+  status: InquiryStatus
+  createdAt: string
+  updatedAt: string
+}
+
+export type SubmitInquiryBody = {
+  name: string
+  phone: string
+  email: string
+  service?: string
+  message?: string
+}
+
+export const inquiryApi = {
+  /** Called by the public contact form — no auth required */
+  submit: (body: SubmitInquiryBody) =>
+    request<{ success: boolean; message: string; data: ApiInquiry }>('/api/inquiries', {
+      method: 'POST',
+      body: JSON.stringify(body),
+    }),
+
+  /** Admin only */
+  getAll: () =>
+    request<{ success: boolean; count: number; data: ApiInquiry[] }>('/api/inquiries'),
+
+  updateStatus: (id: string, status: InquiryStatus) =>
+    request<{ success: boolean; message: string; data: ApiInquiry }>(`/api/inquiries/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ status }),
+    }),
+
+  delete: (id: string) =>
+    request<{ success: boolean; message: string }>(`/api/inquiries/${id}`, { method: 'DELETE' }),
+}
+

@@ -9,15 +9,7 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/s
 import { cn } from '@/lib/utils'
 import { navLinks, site } from '@/lib/site-data'
 import { BrandLogo } from '@/components/site/brand-logo'
-import { socialIcons } from '@/components/site/social-icons'
 import { useSiteContact } from '@/hooks/use-site-contact'
-
-const socials = [
-  { label: 'Facebook', icon: socialIcons.Facebook, href: '#' },
-  { label: 'Twitter', icon: socialIcons.Twitter, href: '#' },
-  { label: 'Instagram', icon: socialIcons.Instagram, href: '#' },
-  { label: 'LinkedIn', icon: socialIcons.LinkedIn, href: '#' },
-]
 
 export function SiteHeader() {
   const pathname = usePathname()
@@ -89,10 +81,13 @@ export function SiteHeader() {
             <span className="flex size-10 items-center justify-center rounded-full bg-secondary text-primary">
               <Phone className="size-5" />
             </span>
-            <div className="leading-tight">
+            <Link
+              href="/contact"
+              className="leading-tight hover:text-primary transition-colors"
+            >
               <p className="text-xs text-muted-foreground">Have questions?</p>
-              <p className="text-sm font-bold text-foreground">{phones[0] ?? site.phone}</p>
-            </div>
+              <Link href={`tel:${phones[0] ?? site.phone}`} className="text-sm font-bold text-foreground">{phones[0] ?? site.phone}</Link>
+            </Link>
           </div>
 
           {/* Mobile */}
@@ -150,18 +145,6 @@ export function SiteHeader() {
                   >
                     Request a Pickup
                   </Button>
-                  <div className="flex items-center gap-2">
-                    {socials.map((s) => (
-                      <a
-                        key={s.label}
-                        href={s.href}
-                        aria-label={s.label}
-                        className="flex size-9 items-center justify-center rounded-full bg-secondary text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-                      >
-                        <s.icon className="size-4" />
-                      </a>
-                    ))}
-                  </div>
                 </div>
               </div>
             </SheetContent>

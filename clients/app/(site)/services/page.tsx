@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { PageBanner } from '@/components/site/page-banner'
 import { SectionHeading } from '@/components/site/section-heading'
-import { ServiceCard } from '@/components/site/service-card'
 import { DynamicServicesList } from '@/components/site/dynamic-services-list'
 
 const CtaSection = dynamic(() =>
