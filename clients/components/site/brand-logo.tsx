@@ -13,5 +13,5 @@ export function BrandLogo({
     <Link href="/" className={cn('flex items-center gap-2.5', className)}>
       <Image src="/al adnan.png" alt="Logo" width={100} height={100} />
     </Link>
-  )
+  ) 
 }
