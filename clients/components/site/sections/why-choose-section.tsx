@@ -29,7 +29,7 @@ export function WhyChooseSection() {
           </div>
           <div className="relative min-h-[280px]">
             <Image
-              src="/images/why-choose.png"
+              src="/why-choose.png"
               alt="Scrap collection truck lifting a metal container"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

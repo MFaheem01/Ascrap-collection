@@ -24,7 +24,7 @@ export function AboutSection() {
         <div className="grid grid-cols-2 gap-4">
           <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-md">
             <Image
-              src="/images/about-1.png"
+              src="/about-1.png"
               alt="Worker sorting scrap metal"
               fill
               sizes="(max-width: 1024px) 50vw, 25vw"
@@ -33,7 +33,7 @@ export function AboutSection() {
           </div>
           <div className="relative aspect-[3/4] overflow-hidden rounded-md">
             <Image
-              src="/images/about-2.png"
+              src="/about-2.png"
               alt="Crane lifting steel at a scrap yard"
               fill
               sizes="(max-width: 1024px) 50vw, 25vw"

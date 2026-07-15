@@ -81,19 +81,19 @@ export const industries = [
     title: 'Construction Sites',
     description:
       'Rebar, offcuts, and demolition metal cleared so your crews keep moving.',
-    image: '/images/industry-construction.png',
+    image: '/industry-construction.png',
   },
   {
     title: 'Automotive & Salvage',
     description:
       'Scrapped vehicles, parts, and shop metal collected on your schedule.',
-    image: '/images/industry-automotive.png',
+    image: '/industry-automotive.png',
   },
   {
     title: 'Manufacturing',
     description:
       'Recurring pickup of production offcuts, shavings, and packaging waste.',
-    image: '/images/industry-manufacturing.png',
+    image: '/industry-manufacturing.png',
   },
 ]
 

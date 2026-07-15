@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-brand-green">
       <Image
-        src="/images/hero-scrap.png"
+        src="/hero-scrap.png"
         alt="Worker loading scrap metal into a collection truck"
         fill
         priority
