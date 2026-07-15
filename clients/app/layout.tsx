@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   title: 'Al Adnan — scrap buyer in UAE',
   description:
     'Al Adnan provides scrap metal pickup, e-waste collection, appliance removal, and industrial recycling in UAE',
+    icons:"/favicon.ico"
 }
 
 export const viewport: Viewport = {
