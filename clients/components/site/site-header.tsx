@@ -43,7 +43,7 @@ export function SiteHeader() {
             render={<Link href="/contact" />}
             className="rounded-none bg-gold font-semibold text-gold-foreground hover:bg-gold/90"
           >
-            Request a Pickup
+            Contact Us
             <RefreshCw data-icon="inline-end" />
           </Button>
         </div>

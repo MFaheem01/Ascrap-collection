@@ -26,14 +26,14 @@ export function CtaSection() {
           </div>
         </div>
         <p className="max-w-md text-center text-primary-foreground/80 lg:text-left">
-          Ready to clear that scrap? Get a fast quote and schedule a pickup that works for you.
+          Ready to clear that scrap? Get a fast quote or free estimation for a pickup that works for you.
         </p>
         <Button
           size="lg"
           render={<Link href="/contact" />}
           className="h-12 rounded-none bg-gold px-7 text-base font-semibold text-gold-foreground hover:bg-gold/90"
         >
-          Book a Pickup
+          Contact Us
           <RefreshCw data-icon="inline-end" />
         </Button>
       </div>

@@ -9,10 +9,10 @@ import {
 } from 'lucide-react'
 
 export const site = {
-  name: 'ScrapWorks',
-  phone: '+1 (246) 333-0089',
-  email: 'pickup@scrapworks.com',
-  address: '88 Brooklyn Golden Street, New York, USA',
+  name: 'Al Adnan Scrap Buyer',
+  phone: '+97156 700 9562',
+  email: 'adnannazar143@gmail.com',
+  address: '787G+GGQ Dubai - United Arab Emirates',
   hours: '24/7',
 }
 

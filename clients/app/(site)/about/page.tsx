@@ -16,9 +16,9 @@ const CtaSection = dynamic(() =>
 )
 
 export const metadata: Metadata = {
-  title: 'About — ScrapWorks',
+  title: 'About — Al Adnan Scrap Buyer',
   description:
-    'Learn how ScrapWorks recycles metal, electronics, and industrial materials responsibly.',
+    'Learn how Al Adnan Scrap Buyer recycles metal, electronics, and industrial materials responsibly.',
 }
 
 const values = [
@@ -42,7 +42,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <PageBanner title="About ScrapWorks" breadcrumb="About" />
+      <PageBanner title="About Al Adnan Scrap Buyer" breadcrumb="About" />
       <AboutSection />
 
       <section className="bg-background py-20">

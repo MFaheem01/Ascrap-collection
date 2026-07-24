@@ -3,7 +3,7 @@ import { PageBanner } from '@/components/site/page-banner'
 import { SectionHeading } from '@/components/site/section-heading'
 
 export const metadata: Metadata = {
-  title: 'Blog — ScrapWorks',
+  title: 'Blog — Al Adnan Scrap Buyer',
   description: 'Guides and news on scrap metal pricing, recycling, and collection.',
 }
 

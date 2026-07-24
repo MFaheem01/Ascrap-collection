@@ -49,7 +49,7 @@ export function AboutSection() {
             title="We're Leaders in Scrap Collection & Recycling"
           />
           <p className="mt-5 leading-relaxed text-muted-foreground">
-            For over a decade, ScrapWorks has helped homes, contractors, and
+            For over a decade, Al Adnan Scrap Buyer has helped homes, contractors, and
             factories turn unwanted metal and materials into value. Our fleet and
             trained crews make responsible recycling simple and profitable.
           </p>

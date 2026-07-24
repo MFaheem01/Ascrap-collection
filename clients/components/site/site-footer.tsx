@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import { BrandLogo } from '@/components/site/brand-logo'
 import { navLinks, services, site } from '@/lib/site-data'
-import { socialIcons } from '@/components/site/social-icons'
 import { useSiteContact } from '@/hooks/use-site-contact'
 
 export function SiteFooter() {
@@ -19,7 +18,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-5">
           <BrandLogo onDark />
           <p className="text-sm leading-relaxed text-brand-green-foreground/70">
-            Turning scrap into value. ScrapWorks collects, sorts, and recycles
+            Turning scrap into value. Al Adnan Scrap &amp; buyer collects, sorts, and recycles
             metal, electronics, and industrial waste with fast, reliable pickups.
           </p>
         </div>
@@ -95,8 +94,8 @@ export function SiteFooter() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 text-sm text-brand-green-foreground/70 md:flex-row">
-          <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>Fast, responsible scrap collection &amp; recycling.</p>
+          <p>&copy; 2023 Al Adnan Scrap &amp; buyer. All rights reserved.</p>
+          <p>Fast, responsible Al Adnan Scrap &amp; buyer.</p>
         </div>
       </div>
     </footer>

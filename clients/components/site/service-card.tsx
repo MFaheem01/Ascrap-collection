@@ -1,6 +1,6 @@
 'use client'
 
-// Service card — styled to match ScrapWorks layout (brand-green + gold accent system)
+// Service card — styled to match Al Adnan Scrap Buyer layout (brand-green + gold accent system)
 
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'

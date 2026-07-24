@@ -9,7 +9,7 @@ const CtaSection = dynamic(() =>
 )
 
 export const metadata: Metadata = {
-  title: 'Services — ScrapWorks',
+  title: 'Services — Al Adnan Scrap Buyer',
   description:
     'Scrap metal pickup, industrial scrap, e-waste, appliance removal, cardboard, and vehicle scrap collection.',
 }

@@ -39,6 +39,7 @@ import {
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { useAuth } from '@/context/auth-context'
 import { site } from '@/lib/site-data'
+import { BrandLogo } from '../site/brand-logo'
 
 const navItems = [
   { label: 'Overview',  href: '/dashboard',          icon: LayoutDashboard },
@@ -137,12 +138,11 @@ export function DashboardSidebar() {
               tooltip={site.name}
               render={<Link href="/" />}
             >
-              <div className="flex size-8 shrink-0 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
-                <Recycle className="size-4" />
+              <div className="flex size-8 shrink-0 items-center justify-center">
+                <BrandLogo />
               </div>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-bold">{site.name}</span>
-                <span className="truncate text-xs text-sidebar-foreground/60">Admin Panel</span>
+                <span className="truncate font-bold text-sm">Admin Panel</span>
               </div>
             </SidebarMenuButton>
           </SidebarMenuItem>

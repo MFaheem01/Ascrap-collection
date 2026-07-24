@@ -1,6 +1,6 @@
 'use client'
 
-// Dynamic blog list — styled to match ScrapWorks brand layout (brand-green + gold)
+// Dynamic blog list — styled to match Al Adnan Scrap Buyer layout (brand-green + gold)
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
@@ -12,42 +12,42 @@ const staticPosts = [
     title: 'How Scrap Metal Prices Are Set (and How to Get More)',
     excerpt: 'Understand the factors behind ferrous and non-ferrous pricing so you can time your pickups.',
     image: '/industry-manufacturing.png',
-    date: 'Jun 28, 2026',
+    date: 'Jun 28, 2023',
     tag: 'Pricing',
   },
   {
     title: 'A Business Guide to Responsible E-Waste Recycling',
     excerpt: 'From data destruction to certification, here is what every company should know.',
     image: '/banner-2.png',
-    date: 'Jul 2, 2026',
+    date: 'Jul 2, 2023',
     tag: 'E-Waste',
   },
   {
     title: 'Clearing a Construction Site: Scrap Removal Checklist',
     excerpt: 'Keep your crews moving with a simple plan for staging and collecting site metal.',
     image: '/industry-construction.png',
-    date: 'Jul 4, 2026',
+    date: 'Jul 4, 2023',
     tag: 'Construction',
   },
   {
     title: 'Ferrous vs Non-Ferrous: Know Your Metals',
     excerpt: 'A quick primer on identifying and separating the metals worth the most at the scale.',
     image: '/about-2.png',
-    date: 'Jul 5, 2026',
+    date: 'Jul 5, 2023',
     tag: 'Guide',
   },
   {
     title: 'What Happens to Your Old Appliances After Pickup',
-    excerpt: 'Follow a refrigerator through the full ScrapWorks recovery and recycling process.',
+    excerpt: 'Follow a refrigerator through the full Al Adnan Scrap Buyer recovery and recycling process.',
     image: '/banner-1.png',
-    date: 'Jul 7, 2026',
+    date: 'Jul 7, 2023',
     tag: 'Appliances',
   },
   {
     title: 'Salvage Yard Trends Shaping Auto Recycling',
     excerpt: 'How demand for parts and metals is changing the way vehicles get scrapped.',
     image: '/industry-automotive.png',
-    date: 'Jul 8, 2026',
+    date: 'Jul 8, 2023',
     tag: 'Automotive',
   },
 ]

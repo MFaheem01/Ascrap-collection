@@ -28,8 +28,8 @@ export function Hero() {
             </span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-green-foreground/80">
-            Metal, electronics, appliances, and industrial waste — we pick it up,
-            sort it, and recycle it responsibly. Book a collection in minutes.
+            Metal, electronics, appliances, and industrial waste, we pick it up.
+            Contact us for a quick and responsible collection in minutes.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button
@@ -37,7 +37,7 @@ export function Hero() {
               render={<Link href="/contact" />}
               className="h-12 rounded-none bg-gold px-7 text-base font-semibold text-gold-foreground hover:bg-gold/90"
             >
-              Book a Pickup
+              Contact Us
               <RefreshCw data-icon="inline-end" />
             </Button>
             <Button

@@ -51,14 +51,14 @@ export function FreePickupSection() {
             render={<Link href="/contact" />}
             className="rounded-none bg-gold font-semibold text-gold-foreground hover:bg-gold/90 shrink-0"
           >
-            Schedule a Pickup
+            call us for pickup
             <RefreshCw data-icon="inline-end" />
           </Button>
         </div>
 
         <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
           We make scrap removal effortless. No transportation hassle, no waiting — just
-          schedule a slot and our team does the rest. Homes, factories, and construction
+          Call or WhatsApp us and we will send our team to pick it up. Homes, factories, and construction
           sites all welcome.
         </p>
 

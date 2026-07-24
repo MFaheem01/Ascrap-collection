@@ -5,7 +5,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
-import { Loader2, LogIn } from 'lucide-react'
+import { Eye, EyeOff, Loader2, LogIn } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { authApi } from '@/lib/api'
@@ -18,7 +18,8 @@ export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
-
+  const [showPassword, setShowPassword] = useState(false)
+  
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
@@ -39,7 +40,7 @@ export default function LoginPage() {
       <div className="w-full max-w-sm rounded-lg border bg-card p-8 shadow-lg">
         <div className="mb-8 flex flex-col items-center gap-3">
           <BrandLogo />
-          <p className="text-sm text-muted-foreground">Admin Panel — Sign in to continue</p>
+          <p className="text-sm text-muted-foreground">Admin Panel, Sign in to continue</p>
         </div>
 
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
@@ -50,7 +51,7 @@ export default function LoginPage() {
             <Input
               id="email"
               type="email"
-              placeholder="admin@askrap.ae"
+              placeholder="Enter Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -62,15 +63,30 @@ export default function LoginPage() {
             <label className="text-sm font-medium text-foreground" htmlFor="password">
               Password
             </label>
-            <Input
-              id="password"
-              type="password"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              autoComplete="current-password"
-            />
+            <div className="relative">
+              <Input
+                id="password"
+                type={showPassword ? "text" : "password"}
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                autoComplete="current-password"
+                className="pr-9"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground focus:outline-none"
+                aria-label={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? (
+                  <EyeOff className="size-4" />
+                ) : (
+                  <Eye className="size-4" />
+                )}
+              </button>
+            </div>
           </div>
 
           <Button type="submit" className="mt-2 w-full" disabled={loading}>

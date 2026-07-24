@@ -23,7 +23,7 @@ export function WhyChooseSection() {
               render={<Link href="/contact" />}
               className="w-fit rounded-none bg-gold font-semibold text-gold-foreground hover:bg-gold/90"
             >
-              Book Now
+              Get a Free Quote
               <RefreshCw data-icon="inline-end" />
             </Button>
           </div>
