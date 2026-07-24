@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Menu, Phone, Mail, MapPin, Clock, RefreshCw } from 'lucide-react'
+import { Menu, Phone, Mail, MapPin, Clock, RefreshCw, User } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
@@ -44,7 +44,7 @@ export function SiteHeader() {
             className="rounded-none bg-gold font-semibold text-gold-foreground hover:bg-gold/90"
           >
             Contact Us
-            <RefreshCw data-icon="inline-end" />
+            <User data-icon="inline-end" />
           </Button>
         </div>
       </div>

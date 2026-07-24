@@ -18,7 +18,7 @@ const staticPosts = [
   {
     title: 'A Business Guide to Responsible E-Waste Recycling',
     excerpt: 'From data destruction to certification, here is what every company should know.',
-    image: '/banner-2.png',
+    image: '/e-waste.jpg',
     date: 'Jul 2, 2023',
     tag: 'E-Waste',
   },
@@ -39,7 +39,7 @@ const staticPosts = [
   {
     title: 'What Happens to Your Old Appliances After Pickup',
     excerpt: 'Follow a refrigerator through the full Al Adnan Scrap Buyer recovery and recycling process.',
-    image: '/banner-1.png',
+    image: '/appliance.jpg',
     date: 'Jul 7, 2023',
     tag: 'Appliances',
   },

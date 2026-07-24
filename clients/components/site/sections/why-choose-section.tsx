@@ -24,7 +24,7 @@ export function WhyChooseSection() {
               className="w-fit rounded-none bg-gold font-semibold text-gold-foreground hover:bg-gold/90"
             >
               Get a Free Quote
-              <RefreshCw data-icon="inline-end" />
+              
             </Button>
           </div>
           <div className="relative min-h-[280px]">

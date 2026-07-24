@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
 import { PageBanner } from '@/components/site/page-banner'
 import { MapPin, Phone, Mail } from 'lucide-react'
 import { useSiteContact } from '@/hooks/use-site-contact'
-
+import Link from 'next/link'
 const ContactForm = dynamic(() =>
   import('@/components/site/contact-form').then((m) => m.ContactForm),
 )
@@ -16,7 +16,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageBanner eyebrow="Get In Touch" title="Contact Us" crumb="Contact" />
+      <PageBanner title="Contact Us" breadcrumb="Contact" />
 
       <section className="bg-background py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4">
@@ -41,13 +41,13 @@ export default function ContactPage() {
                   <div>
                     <p className="text-sm font-semibold text-foreground">Email</p>
                     {emails.map((e) => (
-                      <a
+                      <Link
                         key={e}
                         href={`mailto:${e}`}
                         className="mt-0.5 block text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
                         {e}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -60,13 +60,13 @@ export default function ContactPage() {
                   <div>
                     <p className="text-sm font-semibold text-foreground">Phone</p>
                     {phones.map((p) => (
-                      <a
+                      <Link
                         key={p}
                         href={`tel:${p.replace(/\s/g, '')}`}
                         className="mt-0.5 block text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
                         {p}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>

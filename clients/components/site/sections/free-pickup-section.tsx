@@ -8,7 +8,7 @@ import {
   PhoneCall,
   ClipboardList,
   BadgeCheck,
-  RefreshCw,
+  User,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { SectionHeading } from '@/components/site/section-heading'
@@ -51,7 +51,7 @@ export function FreePickupSection() {
             render={<Link href="/contact" />}
             className="rounded-none bg-gold font-semibold text-gold-foreground hover:bg-gold/90 shrink-0"
           >
-            call us for pickup
+            Contact Us for pickup
             <RefreshCw data-icon="inline-end" />
           </Button>
         </div>
@@ -110,8 +110,8 @@ export function FreePickupSection() {
             render={<Link href="/contact" />}
             className="h-12 shrink-0 rounded-none bg-gold px-7 text-base font-semibold text-gold-foreground hover:bg-gold/90"
           >
-            Book Free Pickup
-            <RefreshCw data-icon="inline-end" />
+            Contact Us for Free Pickup
+            <User data-icon="inline-end" />
           </Button>
         </div>
       </div>

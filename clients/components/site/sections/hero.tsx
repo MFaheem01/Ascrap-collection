@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, RefreshCw } from 'lucide-react'
+import { ArrowRight, RefreshCw, User } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export function Hero() {
@@ -38,7 +38,7 @@ export function Hero() {
               className="h-12 rounded-none bg-gold px-7 text-base font-semibold text-gold-foreground hover:bg-gold/90"
             >
               Contact Us
-              <RefreshCw data-icon="inline-end" />
+              <User data-icon="inline-end" />
             </Button>
             <Button
               size="lg"

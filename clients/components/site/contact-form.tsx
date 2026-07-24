@@ -57,7 +57,7 @@ export function ContactForm() {
         description:
           error instanceof Error
             ? error.message
-            : "Something went wrong. Please try again or call us directly.",
+            : "Something went wrong. Please try again or Call us directly.",
       })
     } finally {
       setIsLoading(false)
@@ -66,9 +66,9 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="rounded-lg border bg-card p-6 md:p-8">
-      <h3 className="text-xl font-bold text-foreground">Request a Pickup</h3>
+      <h3 className="text-xl font-bold text-foreground">Contact Us for Pickup</h3>
       <p className="mt-1 text-sm text-muted-foreground">
-        Fill out the form and we&apos;ll get back to you within one business day.
+        Fill out the form and we&apos;ll get back to you as soon as possible.
       </p>
 
       <FieldGroup className="mt-6">
@@ -128,11 +128,11 @@ export function ContactForm() {
           {isLoading ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Submitting…
+              Sending…
             </>
           ) : (
             <>
-              Submit Request
+              Send Message
               <Send data-icon="inline-end" className="ml-2 h-4 w-4" />
             </>
           )}

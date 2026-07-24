@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Phone, RefreshCw } from 'lucide-react'
+import { Phone, User } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { site } from '@/lib/site-data'
 import { useSiteContact } from '@/hooks/use-site-contact'
@@ -34,7 +34,7 @@ export function CtaSection() {
           className="h-12 rounded-none bg-gold px-7 text-base font-semibold text-gold-foreground hover:bg-gold/90"
         >
           Contact Us
-          <RefreshCw data-icon="inline-end" />
+          <User data-icon="inline-end" />
         </Button>
       </div>
     </section>
