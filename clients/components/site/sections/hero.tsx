@@ -22,14 +22,13 @@ export function Hero() {
             Fast & Reliable Scrap Collection
           </span>
           <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] tracking-tight text-brand-green-foreground text-balance sm:text-5xl lg:text-6xl">
-            Turning Your Scrap Into{' '}
+            Scrap Collection Services in {' '}
             <span className="text-gold underline decoration-4 underline-offset-8">
-              Real Value
+              Dubai
             </span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-green-foreground/80">
-            Metal, electronics, appliances, and industrial waste, we pick it up.
-            Contact us for a quick and responsible collection in minutes.
+            Al Adnan buys and collects scrap metal, appliances, batteries, and e-waste across Dubai and the UAE. Every pickup includes free transportation, on-the-spot digital weighing, and instant cash payment, with no hidden fees.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button

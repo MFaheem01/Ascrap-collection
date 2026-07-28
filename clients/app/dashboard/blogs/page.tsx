@@ -1,6 +1,6 @@
 'use client'
 
-// Blogs management page — card grid layout
+// Blogs management page — card grid layout with create / edit / delete
 
 import { useEffect, useState } from 'react'
 import { Plus, Pencil, Check, X, Loader2, BookOpen } from 'lucide-react'
@@ -27,6 +27,7 @@ const BLANK = {
   summary: '',
   content: '',
   coverImage: '',
+  author: 'Al Adnan Team',
   tags: [] as string[],
   isPublished: false,
 }
@@ -82,10 +83,11 @@ export default function BlogsPage() {
       summary: b.summary,
       content: b.content,
       coverImage: b.coverImage,
-      tags: b.tags,
+      author: b.author || 'Al Adnan Team',
+      tags: b.tags || [],
       isPublished: b.isPublished,
     })
-    setTagsInput(b.tags.join(', '))
+    setTagsInput((b.tags || []).join(', '))
     setShowForm(true)
     setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50)
   }
@@ -185,6 +187,22 @@ export default function BlogsPage() {
                   placeholder="url-friendly-slug"
                 />
               </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-sm font-medium">Author</label>
+                <Input
+                  value={form.author}
+                  onChange={(e) => setForm((f) => ({ ...f, author: e.target.value }))}
+                  placeholder="Author name"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-sm font-medium">Tags</label>
+                <Input
+                  value={tagsInput}
+                  onChange={(e) => setTagsInput(e.target.value)}
+                  placeholder="Pricing, Guide, News (comma-separated)"
+                />
+              </div>
               <div className="flex flex-col gap-1.5 sm:col-span-2">
                 <label className="text-sm font-medium">Summary</label>
                 <Input
@@ -200,7 +218,7 @@ export default function BlogsPage() {
                   value={form.content}
                   onChange={(e) => setForm((f) => ({ ...f, content: e.target.value }))}
                   required
-                  placeholder="Full blog content (HTML or plain text)"
+                  placeholder="Full blog article content (HTML or text)"
                 />
               </div>
               <div className="flex flex-col gap-1.5 sm:col-span-2">
@@ -230,7 +248,9 @@ export default function BlogsPage() {
                         toast.success('Cover image uploaded.')
                       }
                     }}
-                    onUploadError={(error: Error) => toast.error(`Upload failed: ${error.message}`)}
+                    onUploadError={(error) => {
+                      toast.error(`Upload failed: ${error.message}`)
+                    }}
                   />
                 </div>
               </div>

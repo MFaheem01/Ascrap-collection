@@ -18,10 +18,10 @@ const caveat = Caveat({
 })
 
 export const metadata: Metadata = {
-  title: 'Al Adnan — scrap buyer in UAE',
+  title: 'Al Adnan Scrap Buyer | Sell Metal & Scrap in Dubai, UAE',
   description:
-    'Al Adnan provides scrap metal pickup, e-waste collection, appliance removal, and industrial recycling in UAE',
-    icons:"/favicon.ico"
+    'Al Adnan buys scrap metal, copper, aluminum, steel, and batteries across Dubai and the UAE. Free pickup, instant cash, and daily market rates.',
+  icons: "/favicon.ico"
 }
 
 export const viewport: Viewport = {

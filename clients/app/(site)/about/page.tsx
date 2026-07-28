@@ -16,9 +16,9 @@ const CtaSection = dynamic(() =>
 )
 
 export const metadata: Metadata = {
-  title: 'About — Al Adnan Scrap Buyer',
+  title: 'About Al Adnan Scrap Buyer | Licensed Metal Recyclers',
   description:
-    'Learn how Al Adnan Scrap Buyer recycles metal, electronics, and industrial materials responsibly.',
+    'Al Adnan Scrap Buyer has bought and recycled metal across Dubai for years, with licensed operations, fair pricing, and thousands of customers served.',
 }
 
 const values = [

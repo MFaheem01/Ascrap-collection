@@ -9,6 +9,7 @@ import {
   ClipboardList,
   BadgeCheck,
   User,
+  RefreshCw,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { SectionHeading } from '@/components/site/section-heading'
@@ -17,22 +18,22 @@ const steps = [
   {
     icon: PhoneCall,
     title: 'Call or Book Online',
-    description: 'Reach out via phone or fill our quick online form — takes less than a minute.',
+    description: 'Contact us by phone or WhatsApp with details of your scrap',
   },
   {
     icon: ClipboardList,
     title: 'Get a Free Quote',
-    description: 'We assess your scrap and give you a fair, transparent price — no hidden fees.',
+    description: ' Get a quote  based on item type, weight, and current market rates.',
   },
   {
     icon: Truck,
     title: 'We Collect & Pay You',
-    description: 'Our crew arrives on time, loads everything, and pays you on the spot.',
+    description: 'We collect and pay on the spot after weighing, at no cost to you.',
   },
   {
     icon: BadgeCheck,
     title: 'Certified Recycling',
-    description: 'Every item is responsibly recycled with full compliance documentation.',
+    description: ' Certified recycling with documentation provided on request.',
   },
 ]
 
@@ -44,7 +45,7 @@ export function FreePickupSection() {
         <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
           <SectionHeading
             align="left"
-            eyebrow="100% Free Service"
+            eyebrow="100% Free Scrap Pickup Service"
             title="Free Scrap Pickup — Right at Your Door"
           />
           <Button
@@ -57,9 +58,7 @@ export function FreePickupSection() {
         </div>
 
         <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
-          We make scrap removal effortless. No transportation hassle, no waiting — just
-          Call or WhatsApp us and we will send our team to pick it up. Homes, factories, and construction
-          sites all welcome.
+          Get free scrap pickup at your doorstep with no transportation hassle. We collect scrap from homes, factories, and construction sites across the UAE.
         </p>
 
         {/* Steps grid */}

@@ -4,14 +4,17 @@ import { PageBanner } from '@/components/site/page-banner'
 import { SectionHeading } from '@/components/site/section-heading'
 import { DynamicServicesList } from '@/components/site/dynamic-services-list'
 
+const FaqSection = dynamic(() =>
+  import('@/components/site/sections/faq-section').then((m) => m.FaqSection),
+)
 const CtaSection = dynamic(() =>
   import('@/components/site/sections/cta-section').then((m) => m.CtaSection),
 )
 
 export const metadata: Metadata = {
-  title: 'Services — Al Adnan Scrap Buyer',
+  title: 'Scrap Buying Services | Al Adnan Scrap Buyer, Dubai',
   description:
-    'Scrap metal pickup, industrial scrap, e-waste, appliance removal, cardboard, and vehicle scrap collection.',
+    'Explore Al Adnan scrap services, from copper and steel to old appliances, batteries, and e-waste. Free pickup and same-day payment across the UAE.',
 }
 
 export default function ServicesPage() {
@@ -27,6 +30,7 @@ export default function ServicesPage() {
           <DynamicServicesList />
         </div>
       </section>
+      <FaqSection />
       <CtaSection />
     </>
   )

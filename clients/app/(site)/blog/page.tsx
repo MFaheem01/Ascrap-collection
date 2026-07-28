@@ -3,8 +3,8 @@ import { PageBanner } from '@/components/site/page-banner'
 import { SectionHeading } from '@/components/site/section-heading'
 
 export const metadata: Metadata = {
-  title: 'Blog — Al Adnan Scrap Buyer',
-  description: 'Guides and news on scrap metal pricing, recycling, and collection.',
+  title: 'Scrap Metal Blog | Al Adnan Scrap Buyer, UAE',
+  description: ' Read scrap metal price updates, recycling guides, and industry news from Al Adnan Scrap Buyer, covering Dubai and the wider UAE.',
 }
 
 import { DynamicBlogList } from '@/components/site/dynamic-blog-list'

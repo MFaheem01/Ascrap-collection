@@ -18,8 +18,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-5">
           <BrandLogo onDark />
           <p className="text-sm leading-relaxed text-brand-green-foreground/70">
-            Turning scrap into value. Al Adnan Scrap &amp; buyer collects, sorts, and recycles
-            metal, electronics, and industrial waste with fast, reliable pickups.
+            Al Adnan Scrap Buyer provides reliable scrap collection and recycling services for metal, electronics, and industrial waste across the UAE.
           </p>
         </div>
 
