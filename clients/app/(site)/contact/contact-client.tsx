@@ -12,8 +12,46 @@ const ContactForm = dynamic(() =>
   import('@/components/site/contact-form').then((m) => m.ContactForm),
 )
 
+/** Convert any Maps URL or address string to an iframe-embeddable URL.
+ *  maps.app.goo.gl short links can't be embedded, so we use the
+ *  location label (address text) as the ?q= search query instead.
+ */
+function toEmbedUrl(url: string, fallbackAddress: string): string {
+  const DEFAULT =
+    `https://www.google.com/maps?q=${encodeURIComponent(fallbackAddress)}&output=embed`
+
+  if (!url && !fallbackAddress) return DEFAULT
+
+  // Already an embed URL
+  if (url?.includes('google.com/maps/embed')) return url
+
+  // Any Google Maps link — convert to embed using the address as query
+  if (
+    url?.includes('google.com/maps') ||
+    url?.includes('maps.google') ||
+    url?.includes('goo.gl/maps') ||
+    url?.includes('maps.app.goo.gl')
+  ) {
+    return `https://www.google.com/maps?q=${encodeURIComponent(fallbackAddress || url)}&output=embed`
+  }
+
+  // Plain text address
+  if (!url?.startsWith('http')) {
+    return `https://www.google.com/maps?q=${encodeURIComponent(url || fallbackAddress)}&output=embed`
+  }
+
+  // Unknown URL — fall back to address query
+  if (fallbackAddress) return DEFAULT
+
+  return url
+}
+
 export function ContactClient() {
   const { phones, emails, locationItems } = useSiteContact()
+  const primaryLocation = locationItems[0]
+  const mapSrc = primaryLocation
+    ? toEmbedUrl(primaryLocation.url, primaryLocation.label)
+    : 'https://www.google.com/maps?q=Dubai+UAE&output=embed'
 
   return (
     <>
@@ -102,10 +140,12 @@ export function ContactClient() {
 
               <div className="mt-6 overflow-hidden rounded-lg border">
                 <iframe
+                  key={mapSrc}
                   title="Facility location map"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=55.15%2C25.05%2C55.40%2C25.30&layer=mapnik"
+                  src={mapSrc}
                   className="h-64 w-full"
                   loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
             </div>

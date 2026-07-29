@@ -8,34 +8,23 @@ import { SectionHeading } from '@/components/site/section-heading'
 import { useSiteContact } from '@/hooks/use-site-contact'
 import { site } from '@/lib/site-data'
 
-function toEmbedUrl(url: string): string {
-  if (!url) return DEFAULT_MAP_EMBED
+function toEmbedUrl(url: string, fallbackAddress?: string): string {
+  if (!url && !fallbackAddress) return DEFAULT_MAP_EMBED
 
   // Already an embed URL
-  if (url.includes('google.com/maps/embed')) return url
+  if (url?.includes('google.com/maps/embed')) return url
 
-  // If it's a google map link (place, coordinates, search, etc.)
-  if (url.includes('google.com/maps') || url.includes('maps.google') || url.includes('goo.gl/maps')) {
-    // Extract query search term from the URL if possible
-    try {
-      const u = new URL(url)
-      const q =
-        u.searchParams.get('q') ||
-        u.searchParams.get('query') ||
-        // /maps/place/LABEL/@lat,lng  — grab the place part
-        u.pathname.replace('/maps/place/', '').split('/')[0]
-      if (q) {
-        return `https://www.google.com/maps?q=${encodeURIComponent(decodeURIComponent(q))}&output=embed`
-      }
-    } catch {
-      // ignore parse errors
-    }
-    return `https://www.google.com/maps?q=${encodeURIComponent(url)}&output=embed`
+  // Handle google map links (place, coordinates, search, etc.)
+  if (url?.includes('google.com/maps') || url?.includes('maps.google') || url?.includes('goo.gl/maps') || url?.includes('maps.app.goo.gl')) {
+    // If it's a short link or specific path, we can't always embed the link directly.
+    // Use the fallbackAddress if provided, or force a 'q' parameter search
+    const query = fallbackAddress || url
+    return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`
   }
 
   // If it's not a URL at all (just an address text like "Dubai Investment Park, UAE")
-  if (!url.startsWith('http://') && !url.startsWith('https://')) {
-    return `https://www.google.com/maps?q=${encodeURIComponent(url)}&output=embed`
+  if (!url?.startsWith('http://') && !url?.startsWith('https://')) {
+    return `https://www.google.com/maps?q=${encodeURIComponent(url || fallbackAddress || '')}&output=embed`
   }
 
   return url
@@ -49,7 +38,7 @@ export function LocationSection() {
 
   // Primary location for map embed (first active one with a URL)
   const primaryLocation = locationItems.find((l) => l.url) ?? locationItems[0]
-  const mapSrc = primaryLocation?.url ? toEmbedUrl(primaryLocation.url) : DEFAULT_MAP_EMBED
+  const mapSrc = primaryLocation ? toEmbedUrl(primaryLocation.url, primaryLocation.label) : DEFAULT_MAP_EMBED
 
   return (
     <section className="bg-background py-20">
