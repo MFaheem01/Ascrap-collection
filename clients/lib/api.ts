@@ -62,6 +62,7 @@ export type ApiService = {
   icon: string
   isActive: boolean
   order: number
+  image?: string
   createdAt: string
   updatedAt: string
 }

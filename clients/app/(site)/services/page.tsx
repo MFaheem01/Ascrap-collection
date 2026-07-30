@@ -20,7 +20,11 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <PageBanner title="Our Services" breadcrumb="Services" />
+      <PageBanner
+        title="Our Services"
+        breadcrumb="Services"
+        description="Al Adnan buys and collects scrap metal, appliances, batteries, and e-waste across Dubai and the UAE. Every pickup includes free transportation, on-the-spot digital weighing, and instant cash payment, with no hidden fees."
+      />
       <section className="bg-background py-20">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading

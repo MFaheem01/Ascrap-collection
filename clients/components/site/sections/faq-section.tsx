@@ -51,7 +51,7 @@ export function FaqSection() {
 
         {/* Accordion list */}
         <div className="mt-12 lg:mx-auto lg:max-w-3xl">
-          <Accordion openMultiple={false}>
+          <Accordion multiple={false}>
             {faqs.map((faq, i) => (
               <AccordionItem key={faq.question} value={String(i)} className="border border-border bg-background mb-3 last:mb-0 rounded-none">
                 <AccordionTrigger className="px-6 py-5 text-sm font-semibold text-foreground sm:text-base hover:no-underline hover:text-primary [&>svg]:text-gold gap-4 rounded-none">

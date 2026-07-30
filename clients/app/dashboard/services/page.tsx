@@ -73,6 +73,7 @@ export default function ServicesPage() {
   const openEdit = (s: ApiService) => {
     setEditingId(s._id)
     setForm({
+      ...BLANK,
       title: s.title,
       slug: s.slug,
       description: s.description,
@@ -229,7 +230,9 @@ export default function ServicesPage() {
                         toast.success('Image uploaded.')
                       }
                     }}
-                    onUploadError={(error: Error) => toast.error(`Upload failed: ${error.message}`)}
+                    onUploadError={(error: Error) => {
+                      toast.error(`Upload failed: ${error.message}`)
+                    }}
                   />
                 </div>
               </div>
