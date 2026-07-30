@@ -27,7 +27,7 @@ export function ConfirmDelete({ label, onConfirm }: Props) {
       <Button
         variant="ghost"
         size="icon"
-        className="size-8 text-destructive hover:bg-destructive/10"
+        className="size-8 shrink-0 text-destructive hover:bg-destructive/10"
         onClick={() => setOpen(true)}
         title={`Delete ${label}`}
       >
@@ -37,12 +37,12 @@ export function ConfirmDelete({ label, onConfirm }: Props) {
   }
 
   return (
-    <div className="flex items-center gap-2 rounded-md border border-destructive/30 bg-destructive/5 px-3 py-1.5">
+    <div className="flex shrink-0 items-center gap-1.5 rounded-md border border-destructive/30 bg-destructive/5 px-2.5 py-1">
       <span className="text-xs font-medium text-destructive">Delete?</span>
       <Button
         size="sm"
         variant="destructive"
-        className="h-7 px-2 text-xs"
+        className="h-7 shrink-0 px-2 text-xs"
         disabled={loading}
         onClick={handleConfirm}
       >
@@ -51,7 +51,7 @@ export function ConfirmDelete({ label, onConfirm }: Props) {
       <Button
         size="sm"
         variant="ghost"
-        className="h-7 px-2 text-xs"
+        className="h-7 shrink-0 px-2 text-xs"
         onClick={() => setOpen(false)}
       >
         Cancel

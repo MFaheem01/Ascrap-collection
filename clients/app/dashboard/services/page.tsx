@@ -135,7 +135,7 @@ export default function ServicesPage() {
     <div className="flex flex-1 flex-col gap-6 p-4 sm:p-6">
 
       {/* ── Page header ── */}
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-foreground">Services</h1>
           <p className="mt-0.5 text-sm text-muted-foreground">
@@ -143,7 +143,7 @@ export default function ServicesPage() {
           </p>
         </div>
         {!showForm && (
-          <Button onClick={openCreate} className="gap-2 shrink-0">
+          <Button onClick={openCreate} className="gap-2 shrink-0 self-start sm:self-auto">
             <Plus className="size-4" /> Add Service
           </Button>
         )}
@@ -297,7 +297,7 @@ export default function ServicesPage() {
                 </div>
               </CardContent>
 
-              <CardFooter className="mt-auto gap-2">
+              <CardFooter className="mt-auto flex flex-wrap items-center gap-2 sm:flex-nowrap">
                 <Button
                   variant="outline"
                   size="sm"

@@ -128,9 +128,9 @@ export default function DashboardPage() {
   const totalItems = Object.values(stats).reduce((a, b) => a + b, 0)
 
   return (
-    <div className="flex flex-1 flex-col gap-6 p-6">
+    <div className="flex flex-1 flex-col gap-6 p-4 sm:p-6">
       {/* Page heading */}
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-foreground">Dashboard Overview</h1>
           <p className="mt-1 text-sm text-muted-foreground">
@@ -140,7 +140,7 @@ export default function DashboardPage() {
         <Button
           variant="outline"
           size="sm"
-          className="gap-2 shrink-0"
+          className="gap-2 shrink-0 self-start"
           onClick={fetchStats}
           disabled={loading}
         >

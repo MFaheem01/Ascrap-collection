@@ -100,8 +100,8 @@ export function ContactPanel({ type, title, valuePlaceholder, labelPlaceholder }
   }
 
   return (
-    <div className="p-8">
-      <div className="mb-6 flex items-center justify-between">
+    <div className="p-4 sm:p-6 lg:p-8">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-foreground">{title}</h1>
           <p className="mt-0.5 text-sm text-muted-foreground">
@@ -109,7 +109,7 @@ export function ContactPanel({ type, title, valuePlaceholder, labelPlaceholder }
           </p>
         </div>
         {!showForm && (
-          <Button onClick={openCreate} className="gap-2">
+          <Button onClick={openCreate} className="gap-2 shrink-0 self-start sm:self-auto">
             <Plus className="size-4" /> Add Entry
           </Button>
         )}
@@ -117,11 +117,11 @@ export function ContactPanel({ type, title, valuePlaceholder, labelPlaceholder }
 
       {/* Form */}
       {showForm && (
-        <Card className="mb-6 p-6">
+        <Card className="mb-6 p-4 sm:p-6">
           <h2 className="mb-4 text-base font-semibold">{editingId ? `Edit Entry` : `New Entry`}</h2>
           <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium font-semibold">
+              <label className="text-sm font-semibold">
                 {type === 'location' ? 'Location Name / Title *' : 'Label *'}
               </label>
               <Input
@@ -132,7 +132,7 @@ export function ContactPanel({ type, title, valuePlaceholder, labelPlaceholder }
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium font-semibold">
+              <label className="text-sm font-semibold">
                 {type === 'location' ? 'Google Maps Link / Address *' : 'Value *'}
               </label>
               <Input
@@ -191,47 +191,51 @@ export function ContactPanel({ type, title, valuePlaceholder, labelPlaceholder }
             No {title.toLowerCase()} yet. Click &quot;Add Entry&quot; to create one.
           </div>
         ) : (
-          <table className="w-full text-sm">
-            <thead className="border-b bg-secondary/40">
-              <tr>
-                <th className="px-5 py-3 text-left font-semibold">Label</th>
-                <th className="px-5 py-3 text-left font-semibold">Value</th>
-                <th className="px-5 py-3 text-left font-semibold">Order</th>
-                <th className="px-5 py-3 text-left font-semibold">Status</th>
-                <th className="px-5 py-3 text-right font-semibold">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border">
-              {items.map((item) => (
-                <tr key={item._id} className="hover:bg-secondary/20">
-                  <td className="px-5 py-3 font-medium text-foreground">{item.label}</td>
-                  <td className="px-5 py-3 text-muted-foreground">{item.value}</td>
-                  <td className="px-5 py-3 text-muted-foreground">{item.order}</td>
-                  <td className="px-5 py-3">
-                    <button onClick={() => toggleActive(item)}>
-                      {item.isActive ? (
-                        <Badge className="bg-emerald-100 text-emerald-700 gap-1">
-                          <ToggleRight className="size-3" /> Active
-                        </Badge>
-                      ) : (
-                        <Badge variant="secondary" className="gap-1">
-                          <ToggleLeft className="size-3" /> Inactive
-                        </Badge>
-                      )}
-                    </button>
-                  </td>
-                  <td className="px-5 py-3">
-                    <div className="flex items-center justify-end gap-2">
-                      <Button variant="ghost" size="icon" className="size-8" onClick={() => openEdit(item)}>
-                        <Pencil className="size-4" />
-                      </Button>
-                      <ConfirmDelete label={item.label} onConfirm={() => handleDelete(item._id)} />
-                    </div>
-                  </td>
+          <div className="w-full overflow-x-auto">
+            <table className="w-full min-w-[550px] text-sm">
+              <thead className="border-b bg-secondary/40">
+                <tr>
+                  <th className="px-4 py-3 text-left font-semibold">Label</th>
+                  <th className="px-4 py-3 text-left font-semibold">Value</th>
+                  <th className="px-4 py-3 text-left font-semibold">Order</th>
+                  <th className="px-4 py-3 text-left font-semibold">Status</th>
+                  <th className="px-4 py-3 text-right font-semibold">Actions</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {items.map((item) => (
+                  <tr key={item._id} className="hover:bg-secondary/20">
+                    <td className="px-4 py-3 font-medium text-foreground">{item.label}</td>
+                    <td className="max-w-[180px] sm:max-w-[300px] truncate px-4 py-3 text-muted-foreground" title={item.value}>
+                      {item.value}
+                    </td>
+                    <td className="px-4 py-3 text-muted-foreground">{item.order}</td>
+                    <td className="px-4 py-3">
+                      <button onClick={() => toggleActive(item)}>
+                        {item.isActive ? (
+                          <Badge className="bg-emerald-100 text-emerald-700 gap-1">
+                            <ToggleRight className="size-3" /> Active
+                          </Badge>
+                        ) : (
+                          <Badge variant="secondary" className="gap-1">
+                            <ToggleLeft className="size-3" /> Inactive
+                          </Badge>
+                        )}
+                      </button>
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-3 text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        <Button variant="ghost" size="icon" className="size-8 shrink-0" onClick={() => openEdit(item)}>
+                          <Pencil className="size-4" />
+                        </Button>
+                        <ConfirmDelete label={item.label} onConfirm={() => handleDelete(item._id)} />
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </Card>
     </div>
