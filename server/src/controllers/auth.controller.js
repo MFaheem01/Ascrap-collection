@@ -38,7 +38,7 @@ export const login = async (req, res) => {
     }
 
     // Find admin by email (password field is excluded by default, so select it)
-    const admin = await Admin.findOne({ email: email.toLowerCase() }).select('+password')
+    const admin = await Admin.findOne({ email: email.trim().toLowerCase() }).select('+password')
 
     if (!admin) {
       return res.status(401).json({
